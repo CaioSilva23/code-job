@@ -4,8 +4,14 @@
 
 <!--PAGE CONTENT-->
 {% block content %}
-<a href="{% url 'opportunities' %}" class='btn btn-outline-info border-light mt-4 mt-sm-5'>
+
+<div class='block-position'>
+    <h1 class='text-light' >We <span class='text-info' id='element'></span></h1>
+    <a href="{% url 'opportunities' %}" id='btn-job' class='btn btn-outline-light border-light mt-4 mt-sm-5'>
       
-    <i class='text-light fas fa-code'></i>&nbsp;&nbsp; <strong>Jobs Opportunities</strong>
-</a>
+    <i class='fas fa-code'></i>&nbsp;&nbsp; <strong>Jobs Opportunities</strong>
+
+    </a>
+</div>
+
 {% endblock content %}

@@ -1,16 +1,12 @@
+/* CONFIG INITIAL*/
+
+html,
 body{
     background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.3)),url("../img/frontend2.jpg");
     background-position: center 0px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-}
-
-
-/* CONFIG INITIAL*/
-
-html,
-body{
     height: 100%;
     margin: 0;
     max-width: 100%;
@@ -33,4 +29,58 @@ body{
     text-align: center;
     color: #fff;
     margin-left: 30px;
+}
+
+/* home*/
+.block-position{
+    width: 80%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#btn-job{
+    width: 270px;
+    font-size: 22px;
+    border-radius: 30px;
+    margin-bottom: -50px;
+}
+
+
+/* label icon*/
+.side-label{
+    width: 40px;    
+}
+
+
+/* button modal  */
+.btn-cancel .btn-send{
+    width: 40px;    
+
+}
+
+
+/* PRELOAD TRANSITION */
+#preloader{
+    border: 6px solid #e5e5e5;
+    border-radius: 50%;
+    border-top-color: #5bc0de;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 32px);
+    width: 55px;
+    height: 55px;
+    z-index: 100;
+    animation: preloader 1.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes preloader{
+    to {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
 }

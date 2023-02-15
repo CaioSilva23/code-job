@@ -1,0 +1,34 @@
+{% extends 'modals/base_modal.html' %}
+
+<!--MODAL ID-->
+{% block modal-id %}
+id="frontendModal"
+{% endblock modal-id %}
+
+
+<!--MODAL TITLE-->
+{% block modal-title %}Frontend Opportunities{% endblock modal-title %}
+
+<!-- block validation-->
+{% block validation %}
+onsubmit="return validateForm()"
+{% endblock validation %}
+
+
+
+<!-- INPUTS ID-->
+{% block id-nome %} id='nome' {% endblock id-nome %}
+
+{% block id-idade %} id='idade' {% endblock id-idade %}
+
+{% block id-email %} id='email' {% endblock id-email %}
+
+{% block id-telefone %} id='telefone' {% endblock id-telefone %}
+
+{% block id-endereco %} id='endereco' {% endblock id-endereco %}
+
+{% block id-experiencia %} id='experiencia' {% endblock id-experiencia %}
+
+{% block id-skills %} id='skills' {% endblock id-skills %}
+
+{% block id-file %} id='file' {% endblock id-file %}

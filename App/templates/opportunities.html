@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 
-<!--NAVBAR CONTENT-->
-{% block navbar-content %}
-<i class='text-info fas fa-code'></i>&nbsp;&nbsp; <strong>Jobs Opportunities</strong>
-{% endblock navbar-content %}
-
+{% block head %}
+<link rel="stylesheet" href="{% static 'App/css/style.css'%}">
+{% endblock head %}
 
 <!--LINKS CONTENT-->
 {% block link %}
@@ -14,8 +13,65 @@
 {% endblock link %}
 
 
+<!--NAVBAR CONTENT-->
+{% block navbar-content %}
+<i class='text-info fas fa-code'></i>&nbsp;&nbsp; <strong>Jobs Opportunities</strong>
+{% endblock navbar-content %}
+
+
 
 <!--PAGE CONTENT-->
 {% block content %}
+
+
+<!--CONTAINER CARDS-->
+<div class='container mt-4' style='width: 80%;'>
+    <div class='justify-content-center align-items-center row'>
+        <h6 class='btn btn-info' style='width: 100%; cursor: default;'>
+            <strong>AVAILABLE JOB OPPORTUNITIES</strong>
+        </h6>
+        <div class='shadow-lg card p-3 mt-3' style='background-color: rgba(0,0,0,0.5);'>
+            <div class='row'>
+                <div class='col-xl-3 col-sm-6 p-1'>
+                    <div class='card' style='background-color: transparent;'>
+                        <button class='btn btn-outline-info btn-lg jobs' data-bs-toggle="modal" data-bs-target="#frontendModal" >
+                            <i class='fab fa-react fa-5x'></i>
+                            <br><br>Front-end
+                        </button>
+                    </div>
+                </div>
+
+                <div class='col-xl-3 col-sm-6 p-1'>
+                    <div class='card' style='background-color: transparent;'>
+                        <button class='btn btn-outline-info btn-lg jobs' data-bs-toggle="modal" data-bs-target="#backendModal" >
+                            <i class='fab fa-python fa-5x'></i>
+                            <br><br>Back-end
+                        </button>
+                    </div>
+                </div>
+
+                <div class='col-xl-3 col-sm-6 p-1'>
+                    <div class='card' style='background-color: transparent;'>
+                        <button class='btn btn-outline-info btn-lg jobs' data-bs-toggle="modal" data-bs-target="#fullstackModal" >
+                            <i class='fab fa-node-js fa-5x'></i>
+                            <br><br>Full-stack
+                        </button>
+                    </div>
+                </div>
+
+                <div class='col-xl-3 col-sm-6 p-1'>
+                    <div class='card' style='background-color: transparent;'>
+                        <button class='btn btn-outline-info btn-lg jobs' data-bs-toggle="modal" data-bs-target="#datascienceModal" >
+                            <i class='fas fa-database fa-5x'></i>
+                            <br><br>Data Science
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END CARDS-->
+
 
 {% endblock content %}
