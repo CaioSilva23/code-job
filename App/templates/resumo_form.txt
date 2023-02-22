@@ -1,0 +1,13 @@
+{{nome}}
+<br>
+{{idade}}
+<br>
+{{email}}
+<br>
+{{telefone}}
+<br>
+{{endereco}}
+<br>
+{{experiencia}}
+<br>
+{{skills}}

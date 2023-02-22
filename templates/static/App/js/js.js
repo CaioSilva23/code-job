@@ -279,3 +279,19 @@ $(document).ready(function(){
     });
 
 });
+
+// VALIDANDO O CAMPO NOME (PERMITE APENAS LETRAS)
+$(".nome").keyup(function(){
+    if (!/^[a-zA-Z _]*$/.test(this.value)){
+        this.value = this.value.split(/^[a-zA-Z _]/).join('');
+    }
+});
+
+
+
+// VALIDANDO O CAMPO IDADE (PERMITE APENAS NUMEROS)
+$(".idade").keyup(function(){
+    if (!/^[0-9]*$/.test(this.value)){
+        this.value = this.value.split(/^[0-9]/).join('');
+    }
+});
