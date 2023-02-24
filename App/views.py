@@ -19,47 +19,38 @@ def opportunities(request):
 # ============= SEND EMAIL FORM ==================
 
 def send_email_frontend(request):
-    # if request.method == 'POST':
+    if request.method == 'POST':
+        nome = request.POST.get('nome')
+        idade = request.POST.get('idade')
+        email = request.POST.get('email')
+        telefone = request.POST.get('telefone')
+        endereco = request.POST.get('endereco')
+        experiencia = request.POST.get('experiencia')
+        skills = request.POST.get('skills')
+        #
 
-    # subject, from_email, to = 'Olá', settings.DEFAULT_FROM_EMAIL, 'caio_ceac23@hotmail.com'
-    # text_content = 'This is an important message.'
-    # html_content = '<p>This is an <strong>important</strong> message.</p>'
-    # msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-    # msg.attach_alternative(html_content, "text/html")
-    # msg.send()
-    send_mail('TESTE', 'TESTE', settings.DEFAULT_FROM_EMAIL, ['caio_ceac23@hotmail.com'])
-    return HttpResponseRedirect('/')
-        # nome = request.POST.get('nome')
-        # idade = request.POST.get('idade')
-        # email = request.POST.get('email')
-        # telefone = request.POST.get('telefone')
-        # endereco = request.POST.get('endereco')
-        # experiencia = request.POST.get('experiencia')
-        # skills = request.POST.get('skills')
-        # #
-
-        # template = loader.get_template('resumo_form.txt')
-        # context = {
-        #         'nome':nome,
-        #         'idade':idade,
-        #         'email':email,
-        #         'telefone':telefone,
-        #         'endereco':endereco,
-        #         'experiencia':experiencia,
-        #         'skills':skills,
-        # }
-        # mensagem = template.render(context)
-        # email = EmailMultiAlternatives(
-        #     subject="Frontend - Candidato",
-        #     from_email='caiocsilva97@gmail.com',
-        #     to=['caio_ceac23@hotmail.com']
-        # )
-        # email.content_subtype = 'html'
-        # curriculo = request.FILES['curriculo']
-        # email.attach(curriculo.name, curriculo.read(), curriculo.content_type)
-        # email.send()
-        # messages.success(request, 'Curriculo frontend enviado com sucesso!')
-        # return HttpResponseRedirect('/')
+        template = loader.get_template('resumo_form.txt')
+        context = {
+                'nome':nome,
+                'idade':idade,
+                'email':email,
+                'telefone':telefone,
+                'endereco':endereco,
+                'experiencia':experiencia,
+                'skills':skills,
+        }
+        mensagem = template.render(context)
+        email = EmailMultiAlternatives(
+            subject="Frontend - Candidato",
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=['caio_ceac23@hotmail.com']
+        )
+     
+        curriculo = request.FILES['curriculo']
+        email.attach(curriculo.name, curriculo.read(), curriculo.content_type)
+        email.send()
+        messages.success(request, 'Curriculo frontend enviado com sucesso!')
+        return HttpResponseRedirect('/')
 
 
 
