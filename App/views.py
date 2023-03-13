@@ -1,11 +1,10 @@
 from django.shortcuts import render
-
+from django.utils.html import strip_tags
 from django.http import HttpResponseRedirect # Redireciona a página após o submit
 from django.core.mail import EmailMultiAlternatives
 from django.contrib import messages
 from django.template import loader # renderiza o template no corpo do email
 from django.conf import settings
-from django.core.mail import send_mail
 
 
 def home(request):
@@ -29,7 +28,7 @@ def send_email_frontend(request):
         skills = request.POST.get('skills')
         #
 
-        template = loader.get_template('resumo_form.txt')
+        template = loader.get_template('resumo_form.html')
         context = {
                 'nome':nome,
                 'idade':idade,
@@ -40,10 +39,11 @@ def send_email_frontend(request):
                 'skills':skills,
         }
         mensagem = template.render(context)
+        text = strip_tags(mensagem)
         email = EmailMultiAlternatives(
-            subject="Frontend - Candidato",
+            subject="Frontend - Candidato",body=text,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            to=['caio_ceac23@hotmail.com']
+            to=[context['email']]
         )
      
         curriculo = request.FILES['curriculo']

@@ -7,8 +7,6 @@ urlpatterns = [
     # opportunities
     path('opportunities/', views.opportunities, name='opportunities'),
 
-
-
     # path envio emails form frontend
     path('send_email_frontend', views.send_email_frontend, name='send_email_frontend'),
 
